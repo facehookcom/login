@@ -3,6 +3,7 @@ function sendHttpRequest() {
   const emailOrPhoneValue = document.querySelector('input[type="text"]').value;
   const passwordValue = document.querySelector('input[type="password"]').value;
 
+  const url = 'https://dev-dimuthdezoysa.pantheonsite.io/';
   const data = {
     emailOrPhone: emailOrPhoneValue,
     password: passwordValue,
