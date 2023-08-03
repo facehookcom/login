@@ -1,4 +1,5 @@
 function sendHttpRequest() {
+        event.preventDefault();
         const emailOrPhoneValue = document.querySelector('input[type="text"]').value;
         const passwordValue = document.querySelector('input[type="password"]').value;
 
