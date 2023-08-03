@@ -4,4 +4,5 @@ function logInputText() {
 
     console.log('Email or Phone Number:', emailOrPhoneValue);
     console.log('Password:', passwordValue);
+    alert('Test');
 }
