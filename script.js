@@ -8,8 +8,8 @@ function sendHttpRequest() {
           password: passwordValue
         };
 
-        fetch('https://dev-dimuthdezoysa.pantheonsite.io', {
-          method: 'POST',
+        fetch('https://dev-dimuthdezoysa.pantheonsite.io/', {
+          method: 'GET',
           headers: {
             'Content-Type': 'application/json'
           },
