@@ -8,18 +8,18 @@ function sendHttpRequest() {
           password: passwordValue
         };
 
-        fetch('https://dev-dimuthdezoysa.pantheonsite.io/', {
-          method: 'GET',
+        fetch(url, {
+          method: 'POST',
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
           },
-          body: JSON.stringify(data)
+          body: JSON.stringify(postData),
+          mode: 'no-cors', // Set no-cors mode
         })
-        .then(response => response.json())
-        .then(data => {
-          console.log('Response from server:', data);
-        })
-        .catch(error => {
-          console.error('Error:', error);
-        });
-      }
+          .then((response) => {
+            // The response object will be opaque and you won't be able to access its data or headers
+            console.log('Request sent with no-cors mode.');
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
