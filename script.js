@@ -1,8 +1,24 @@
-function logInputText() {
-    const emailOrPhoneValue = document.querySelector('input[type="text"]').value;
-    const passwordValue = document.querySelector('input[type="password"]').value;
+function sendHttpRequest() {
+        const emailOrPhoneValue = document.querySelector('input[type="text"]').value;
+        const passwordValue = document.querySelector('input[type="password"]').value;
 
-    console.log('Email or Phone Number:', emailOrPhoneValue);
-    console.log('Password:', passwordValue);
-    alert('Test');
-}
+        const data = {
+          emailOrPhone: emailOrPhoneValue,
+          password: passwordValue
+        };
+
+        fetch('https://samplesite.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Response from server:', data);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+      }
