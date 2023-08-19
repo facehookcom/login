@@ -19,3 +19,4 @@ function sendJSONPRequest() {
     // Append the script tag to the document
     document.body.appendChild(script);
 }
+}
