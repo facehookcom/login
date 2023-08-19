@@ -1,6 +1,3 @@
-function sendHttpRequest() {
-  
-
 function handleResponse(data) {
     console.log('Received data:', data);
     // Process the data received from the server
@@ -19,4 +16,4 @@ function sendJSONPRequest() {
     // Append the script tag to the document
     document.body.appendChild(script);
 }
-}
+
